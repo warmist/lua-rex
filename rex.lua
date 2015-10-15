@@ -36,7 +36,9 @@ function save_cell( file,cell )
 	end
 end
 function load_rex_file( filename ,compressed)
-	compressed=compressed or true
+	if compressed==nil then
+		compressed=true
+	end
 	local ret={}
 
 	local file
@@ -63,7 +65,9 @@ function load_rex_file( filename ,compressed)
 	return ret
 end
 function save_rex_file( filename , data,compressed)
-	compressed=compressed or true
+	if compressed==nil then
+		compressed=true
+	end
 	local ret={}
 	local file
 	if compressed then
